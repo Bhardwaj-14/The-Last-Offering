@@ -1,0 +1,188 @@
+[gd_scene load_steps=10 format=3 uid="uid://d0ylj5luuwdlk"]
+
+[ext_resource type="Script" uid="uid://bhdr6dnsvvvdm" path="res://Main Menu/main_menu.gd" id="1_15lat"]
+[ext_resource type="Texture2D" uid="uid://fr0cp15jhayy" path="res://assets/main-menu-bg.webp" id="2_60tkv"]
+[ext_resource type="FontFile" uid="uid://dvo1r1xbl6y3a" path="res://font/cyberpunk.ttf" id="3_15lat"]
+[ext_resource type="Script" uid="uid://cwnhimwxvw72l" path="res://Main Menu/blink_space.gd" id="3_npuod"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7vrkn"]
+resource_name = "red_button_hover"
+bg_color = Color(0.9, 0.3, 0.3, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 0.5, 0.5, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fu7sn"]
+resource_name = "red_button_normal"
+bg_color = Color(0.7, 0.15, 0.15, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.9, 0.3, 0.3, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jix8l"]
+resource_name = "red_button_pressed"
+bg_color = Color(0.6, 0.1, 0.1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.8, 0.2, 0.2, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="Theme" id="Theme_glbon"]
+Button/styles/focus = SubResource("StyleBoxFlat_7vrkn")
+Button/styles/hover = SubResource("StyleBoxFlat_7vrkn")
+Button/styles/normal = SubResource("StyleBoxFlat_fu7sn")
+Button/styles/pressed = SubResource("StyleBoxFlat_jix8l")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_glbon"]
+resource_name = "red_panel"
+bg_color = Color(0.25, 0.05, 0.05, 0.92)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.8, 0.2, 0.2, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[node name="Main menu" type="Node2D"]
+script = ExtResource("1_15lat")
+
+[node name="MainMenuBg" type="Sprite2D" parent="."]
+position = Vector2(581, 326)
+scale = Vector2(1.3465116, 1.338843)
+texture = ExtResource("2_60tkv")
+
+[node name="Quit" type="TextureButton" parent="."]
+offset_left = 445.0
+offset_top = 288.0
+offset_right = 622.0
+offset_bottom = 343.0
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="MainContainer" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -4.0
+offset_top = 2.0
+offset_right = -4.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="Label" parent="UI/MainContainer"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -301.0
+offset_top = -151.0
+offset_right = 296.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.98449177, 0, 0.2665492, 1)
+theme_override_fonts/font = ExtResource("3_15lat")
+theme_override_font_sizes/font_size = 72
+text = "THE LAST OFFERING"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MenuButtons" type="VBoxContainer" parent="UI/MainContainer"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -118.0
+offset_top = 84.0
+offset_right = 82.0
+offset_bottom = 324.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_glbon")
+
+[node name="Start" type="Button" parent="UI/MainContainer/MenuButtons"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.9, 0.9, 1)
+theme_override_font_sizes/font_size = 18
+text = "PLAY"
+
+[node name="VSeparator" type="VSeparator" parent="UI/MainContainer/MenuButtons"]
+layout_mode = 2
+
+[node name="Options" type="Button" parent="UI/MainContainer/MenuButtons"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.9, 0.9, 1)
+theme_override_font_sizes/font_size = 18
+text = "SETTINGS"
+
+[node name="Quit" type="Button" parent="UI/MainContainer/MenuButtons"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.9, 0.9, 1)
+theme_override_font_sizes/font_size = 18
+text = "QUIT"
+
+[node name="Blink_Space" type="Panel" parent="UI/MainContainer"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -763.0
+offset_top = -95.0
+offset_right = -436.0
+offset_bottom = -70.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_glbon")
+script = ExtResource("3_npuod")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/MainContainer/Blink_Space"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 15.0
+offset_top = 10.0
+offset_right = -15.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="NetworkLabel" type="Label" parent="UI/MainContainer/Blink_Space/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9999848, 0.345128, 0.40402085, 1)
+theme_override_fonts/font = ExtResource("3_15lat")
+theme_override_font_sizes/font_size = 20
+text = "Press ' ␣ ' to Start Playing"
+
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="UI/MainContainer/MenuButtons/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="UI/MainContainer/MenuButtons/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="UI/MainContainer/MenuButtons/Quit" to="." method="_on_quit_pressed"]

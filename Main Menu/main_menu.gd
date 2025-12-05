@@ -9,10 +9,10 @@ func _input(event):
 		# esc, options
 		if event.keycode == KEY_ESCAPE:
 			get_tree().change_scene_to_file("res://options.tscn")
-
+			
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -21,12 +21,12 @@ func _process(delta: float) -> void:
 
 
 func _on_start_pressed() -> void:
-	pass # Replace with function body.
+	get_tree().change_scene_to_file("res://Level_1.tscn")
 
 
 func _on_options_pressed() -> void:
-	pass # Replace with function body.
+	get_tree().change_scene_to_file("res://options.tscn")
 
 
 func _on_quit_pressed() -> void:
-	pass # Replace with function body.
+	get_tree().quit()

@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://d302v8q7bt20r"
-path="res://.godot/imported/main_font.ttf-4f4e772b511d084a967a11993fc13a30.fontdata"
+uid="uid://dvo1r1xbl6y3a"
+path="res://.godot/imported/cyberpunk.ttf-89af1d7bbb5e96196dc2450c918f307f.fontdata"
 
 [deps]
 
-source_file="res://font/main_font.ttf"
-dest_files=["res://.godot/imported/main_font.ttf-4f4e772b511d084a967a11993fc13a30.fontdata"]
+source_file="res://font/cyberpunk.ttf"
+dest_files=["res://.godot/imported/cyberpunk.ttf-89af1d7bbb5e96196dc2450c918f307f.fontdata"]
 
 [params]
 
