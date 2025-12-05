@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://d0ylj5luuwdlk"]
+
+[node name="Main menu" type="Node2D"]
+
+[node name="Button_manager" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Start" type="TextureButton" parent="Button_manager"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Options" type="TextureButton" parent="Button_manager"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Quit" type="TextureButton" parent="Button_manager"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
