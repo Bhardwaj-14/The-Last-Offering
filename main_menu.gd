@@ -1,5 +1,14 @@
 extends Node2D
 
+func _input(event):
+	if event is InputEventKey and event.pressed:
+		#space, play
+		if event.keycode == KEY_SPACE:
+			get_tree().change_scene_to_file("res://Level_1.tscn")
+			
+		# esc, options
+		if event.keycode == KEY_ESCAPE:
+			get_tree().change_scene_to_file("res://options.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

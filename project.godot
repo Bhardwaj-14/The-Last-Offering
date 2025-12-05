@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="the last offering"
+run/main_scene="uid://d0ylj5luuwdlk"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
 
