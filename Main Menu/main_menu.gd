@@ -4,7 +4,7 @@ func _input(event):
 	if event is InputEventKey and event.pressed:
 		#space, play
 		if event.keycode == KEY_SPACE:
-			get_tree().change_scene_to_file("res://Level_1.tscn")
+			get_tree().change_scene_to_file("res://Tutorial/video.tscn")
 			
 		# esc, options
 		if event.keycode == KEY_ESCAPE:
@@ -21,7 +21,7 @@ func _process(delta: float) -> void:
 
 
 func _on_start_pressed() -> void:
-	get_tree().change_scene_to_file("res://Level_1.tscn")
+	get_tree().change_scene_to_file("res://Tutorial/video.tscn")
 
 
 func _on_options_pressed() -> void:

@@ -1,0 +1,153 @@
+[gd_scene load_steps=23 format=3 uid="uid://c22m1xwqyout"]
+
+[ext_resource type="Texture2D" uid="uid://kowhky6j1ukh" path="res://assets/OROCHI-GENSHIN/Idle.png" id="1_athee"]
+[ext_resource type="Script" uid="uid://b0w540xvc1frd" path="res://Tutorial/orochi_genshin.gd" id="1_vy7db"]
+[ext_resource type="Texture2D" uid="uid://bu6sc848xg0l5" path="res://assets/OROCHI-GENSHIN/AirCombo1.png" id="2_ug3qn"]
+[ext_resource type="Texture2D" uid="uid://d1fkixcnvhd4w" path="res://assets/OROCHI-GENSHIN/Run.png" id="4_o2lya"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3v1pm"]
+atlas = ExtResource("2_ug3qn")
+region = Rect2(0, 0, 80, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7xctv"]
+atlas = ExtResource("2_ug3qn")
+region = Rect2(80, 0, 80, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_68x8n"]
+atlas = ExtResource("2_ug3qn")
+region = Rect2(160, 0, 80, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wgcom"]
+atlas = ExtResource("2_ug3qn")
+region = Rect2(240, 0, 80, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bxx4n"]
+atlas = ExtResource("2_ug3qn")
+region = Rect2(320, 0, 80, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q7who"]
+atlas = ExtResource("2_ug3qn")
+region = Rect2(400, 0, 80, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_65665"]
+atlas = ExtResource("2_ug3qn")
+region = Rect2(480, 0, 80, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vy7db"]
+atlas = ExtResource("1_athee")
+region = Rect2(0, 0, 80, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hpoky"]
+atlas = ExtResource("4_o2lya")
+region = Rect2(0, 0, 80, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jappa"]
+atlas = ExtResource("4_o2lya")
+region = Rect2(80, 0, 80, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bmxoh"]
+atlas = ExtResource("4_o2lya")
+region = Rect2(160, 0, 80, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yk2gc"]
+atlas = ExtResource("4_o2lya")
+region = Rect2(240, 0, 80, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xe5lf"]
+atlas = ExtResource("4_o2lya")
+region = Rect2(320, 0, 80, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4eiei"]
+atlas = ExtResource("4_o2lya")
+region = Rect2(400, 0, 80, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a8y6i"]
+atlas = ExtResource("4_o2lya")
+region = Rect2(480, 0, 80, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_abbsi"]
+atlas = ExtResource("4_o2lya")
+region = Rect2(560, 0, 80, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hbx7h"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3v1pm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7xctv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_68x8n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wgcom")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bxx4n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q7who")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_65665")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vy7db")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hpoky")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jappa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bmxoh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yk2gc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xe5lf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4eiei")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a8y6i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_abbsi")
+}],
+"loop": true,
+"name": &"run",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ug3qn"]
+size = Vector2(8, 28)
+
+[node name="OrochiGenshin" type="CharacterBody2D"]
+scale = Vector2(3, 3)
+script = ExtResource("1_vy7db")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_hbx7h")
+animation = &"run"
+autoplay = "run"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 10)
+shape = SubResource("RectangleShape2D_ug3qn")
+debug_color = Color(1, 0, 0, 0.41960785)

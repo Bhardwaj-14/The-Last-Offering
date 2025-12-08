@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://b8kj511kras1t"]
+
+[ext_resource type="VideoStream" uid="uid://dhifr8axwguhc" path="res://assets/the-last-offering-vid.ogv" id="1_6bdai"]
+[ext_resource type="Script" uid="uid://cb353cp1q5kdx" path="res://Tutorial/video_tut.gd" id="1_bvlhp"]
+
+[node name="Video" type="Node2D"]
+script = ExtResource("1_bvlhp")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+offset_left = -574.0
+offset_top = -427.0
+offset_right = 580.0
+offset_bottom = 442.0
+stream = ExtResource("1_6bdai")
+autoplay = true
+expand = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+scale = Vector2(2, 2)
