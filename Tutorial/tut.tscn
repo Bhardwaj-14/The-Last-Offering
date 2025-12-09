@@ -248,11 +248,14 @@ position = Vector2(579.99994, 323)
 scale = Vector2(4.020833, 3.6222222)
 texture = ExtResource("3_ov07o")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(229, 374)
-
 [node name="OrochiGenshin" parent="." instance=ExtResource("4_bv1va")]
 position = Vector2(230.00003, 375)
+
+[node name="Camera2D" type="Camera2D" parent="OrochiGenshin"]
+position = Vector2(-0.3333435, -0.33332825)
+scale = Vector2(0.33333334, 0.33333334)
+position_smoothing_enabled = true
+position_smoothing_speed = 2.1
 
 [node name="TileMap" type="TileMap" parent="."]
 scale = Vector2(4, 4)
